@@ -1,0 +1,27 @@
+<ng-container *ngIf="variant==='text'">
+    <button mat-button [color]="options?.color" [disabled]="options?.disabled">
+        <ng-container [ngTemplateOutlet]="buttonContent"></ng-container>        
+    </button>
+</ng-container>
+
+<ng-container *ngIf="variant==='primary'">
+    <button mat-flat-button [color]="options?.color" [disabled]="options?.disabled">
+        <ng-container [ngTemplateOutlet]="buttonContent"></ng-container>        
+    </button>   
+</ng-container>
+
+<ng-container *ngIf="variant==='secondary'">
+    <button mat-stroked-button [color]="options?.color" [disabled]="options?.disabled">
+        <ng-container [ngTemplateOutlet]="buttonContent"></ng-container>        
+    </button>
+</ng-container>
+
+<ng-container *ngIf="variant==='icon'">
+    <button mat-icon-button [color]="options?.color" [disabled]="options?.disabled" aria-label="icon-button">
+        <mat-icon>{{options?.icon}}</mat-icon>
+    </button>
+</ng-container>
+
+<ng-template #buttonContent>
+    <ng-content></ng-content>
+</ng-template>
